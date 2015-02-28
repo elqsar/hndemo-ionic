@@ -1,0 +1,15 @@
+<ion-view view-title="Settings">
+  <ion-content>
+    <ion-list>
+        <div class="item item-input item-select">
+          <div class="input-label">
+            Number of stories
+          </div>
+          <select ng-model="settings.storyLimit"
+                  ng-options="option for option in settings.options"
+                  ng-change="settings.setLimit()">
+          </select>
+        </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

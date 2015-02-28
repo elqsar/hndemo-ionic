@@ -1,0 +1,19 @@
+<ion-view view-title="Top News">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-icon-right"
+                ng-repeat="story in news.stories"
+                type="item-text-wrap"
+                ng-click="news.openStory(story.url)">
+          <h2><strong>{{ story.title }}</strong></h2>
+          <span>Score: <strong>{{ story.score }}</strong></span>
+          <p>{{ story.url | UrlFilter }}</p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+          <ion-option-button class="button-positive"
+                             ng-click="news.openComments(story)">
+              Comments({{ story.kids.length || 0 }})
+          </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
